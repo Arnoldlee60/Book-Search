@@ -35,7 +35,12 @@ db.once('open', () => {
   });
 });
 
-
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
+  console.log(`
+    🚀  Server is ready at ${url}
+    📭  Query at https://studio.apollographql.com/dev
+  `);
+});
 
 // const express = require('express');
 // const { ApolloServer } = require('apollo-server-express');
